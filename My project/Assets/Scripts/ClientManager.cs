@@ -2,7 +2,9 @@ namespace Project.Managers
 {
     using UnityEngine;
     using Unity.Netcode;
-    public class ClientManager : MonoBehaviour
+	using UnityEngine.SceneManagement;
+
+	public class ClientManager : MonoBehaviour
     {
         [SerializeField]
         private NetworkManager m_netManager;
@@ -10,8 +12,23 @@ namespace Project.Managers
 
         public void StartDedicatedClient()
         {
-            NetManager.StartClient();
+            // m_netManager.NetworkConfig.ConnectionApproval = true;
+            ConnectClient();
             Debug.Log("Started client");
+        }
+
+        private void ConnectClient()
+        {
+
+            var payload = JsonUtility.ToJson(new ConnectionPayload()
+            {
+                playerId = "0",
+                clientScene = SceneManager.GetActiveScene().buildIndex,
+                playerName = "William Curtis"
+            });
+            var payloadBytes = System.Text.Encoding.UTF8.GetBytes(payload);
+            m_netManager.NetworkConfig.ConnectionData = payloadBytes;
+            NetManager.StartClient();
         }
     }
 }
