@@ -2,7 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Unity.Netcode;
-using Project.Managers;
+using Netproject.Managers;
 using System.Collections.Generic;
 using System.Collections;
 public class ClientConnectionTest

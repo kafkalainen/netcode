@@ -1,6 +1,6 @@
 using System.Collections;
 using NUnit.Framework;
-using Project.Managers;
+using Netproject.Managers;
 using Unity.Netcode;
 using UnityEngine.TestTools;
 

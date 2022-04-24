@@ -1,4 +1,4 @@
-namespace Project.Managers
+namespace Netproject.Managers
 {
     using UnityEngine;
     using Unity.Netcode;
