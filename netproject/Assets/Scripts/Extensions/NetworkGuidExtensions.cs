@@ -2,7 +2,6 @@ namespace Netproject.Extensions
 {
 	using System;
 	using Netproject.Types;
-	using UnityEngine;
     public static class NetworkGuidExtensions
     {
 

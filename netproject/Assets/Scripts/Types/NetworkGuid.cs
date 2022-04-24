@@ -23,12 +23,6 @@ namespace Netproject.Types
             m_node = node;
         }
 
-        // public NetworkGuid(ulong first, ulong second)
-        // {
-        //     m_firstHalf = first;
-        //     m_secondHalf = second;
-        // }
-
         public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {
             serializer.SerializeValue(ref m_timeLow);
