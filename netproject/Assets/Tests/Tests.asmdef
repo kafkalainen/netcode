@@ -9,7 +9,8 @@
         "Unity.Netcode.Editor",
         "Unity.Netcode.EditorTests",
         "Unity.Netcode.Runtime",
-        "Unity.Netcode.RuntimeTests"
+        "Unity.Netcode.RuntimeTests",
+        "Unity.Netcode.TestHelpers.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

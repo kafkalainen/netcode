@@ -23,6 +23,7 @@ namespace Project.Managers
             m_netManager.ConnectionApprovalCallback += ApprovalCheck;
             NetManager.StartServer();
             Debug.Log("Started server");
+            Debug.Log(m_netManager.LocalClientId);
         }
 
         void ApprovalCheck(byte[] connectionData, ulong clientId, NetworkManager.ConnectionApprovedDelegate connectionApprovedCallback)

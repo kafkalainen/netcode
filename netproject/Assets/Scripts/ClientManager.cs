@@ -13,7 +13,9 @@ namespace Project.Managers
         public void StartDedicatedClient()
         {
             // m_netManager.NetworkConfig.ConnectionApproval = true;
-            ConnectClient();
+            // ConnectClient();
+            NetManager.StartClient();
+            // Debug.Log(m_netManager.);
             Debug.Log("Started client");
         }
 
