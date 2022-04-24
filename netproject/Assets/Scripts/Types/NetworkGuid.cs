@@ -4,21 +4,37 @@ namespace Netproject.Types
 
     public struct NetworkGuid : INetworkSerializable
     {
-        private ulong m_firstHalf;
-        private ulong m_secondHalf;
-        public ulong FirstHalf => m_firstHalf;
-        public ulong SecondHalf => m_secondHalf;
 
-        public NetworkGuid(ulong first, ulong second)
+        private int m_timeLow;
+        private short m_timeMid;
+        private short m_timeHighAndVersion;
+        private byte[] m_node;
+
+        public int TimeLow => m_timeLow;
+        public short TimeMid => m_timeMid;
+        public short TimeHighAndVersion => m_timeHighAndVersion;
+        public byte[] Node => m_node;
+
+        public NetworkGuid(int timeLow, short timeMid, short timeHighAndVersion, byte[] node)
         {
-            m_firstHalf = first;
-            m_secondHalf = second;
+            m_timeLow = timeLow;
+            m_timeMid = timeMid;
+            m_timeHighAndVersion = timeHighAndVersion;
+            m_node = node;
         }
+
+        // public NetworkGuid(ulong first, ulong second)
+        // {
+        //     m_firstHalf = first;
+        //     m_secondHalf = second;
+        // }
 
         public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {
-            serializer.SerializeValue(ref m_firstHalf);
-            serializer.SerializeValue(ref m_secondHalf);
+            serializer.SerializeValue(ref m_timeLow);
+            serializer.SerializeValue(ref m_timeMid);
+            serializer.SerializeValue(ref m_timeHighAndVersion);
+            serializer.SerializeValue(ref m_node);
         }
     }
 }
